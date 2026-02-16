@@ -2,19 +2,11 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <!-- این خط مهم است برای موبایل -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>MOAIZ E-BUY | پلتفرم واردات و فروش چین-افغانستان</title>
-    
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#007A36">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>MOAIZ E-BUY | واردات حرفه‌ای از چین به افغانستان</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         :root {
             --primary: #1E3A8A;
@@ -25,7 +17,6 @@
             --dark: #0F172A;
             --light: #F8FAFC;
             --gray: #64748B;
-            --success: #10B981;
         }
         
         * { 
@@ -47,86 +38,25 @@
             line-height: 1.6;
             overflow-x: hidden;
             width: 100%;
-        }
-
-        /* Language Selector */
-        .lang-selector {
-            position: fixed;
-            top: 75px;
-            right: 10px;
-            z-index: 999;
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            padding: 5px;
-            display: flex;
-            gap: 5px;
+            min-height: 100vh;
         }
         
-        .lang-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 3px solid transparent;
-            cursor: pointer;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            background: white;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
         
-        .lang-btn:hover {
-            transform: scale(1.1);
-        }
-        
-        .lang-btn.active {
-            border-color: var(--gold);
-            box-shadow: 0 0 10px rgba(255,215,0,0.5);
-        }
-
-        /* Header */
+        /* Header - Mobile Optimized */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
-        }
-        
-        .top-bar {
-            background: rgba(0,0,0,0.2);
-            padding: 5px 0;
-            font-size: 0.8rem;
-        }
-        
-        .top-bar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-icons a {
-            color: white;
-            font-size: 1.1rem;
-            transition: transform 0.3s;
-        }
-        
-        .social-icons a:hover {
-            transform: scale(1.2);
-            color: var(--gold);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .container {
@@ -140,37 +70,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
         }
         
         .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--gold), var(--orange));
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--secondary), var(--gold));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
-            border: 3px solid white;
-        }
-        
-        .logo-text h1 {
-            font-size: 1.3rem;
-            margin: 0;
-        }
-        
-        .logo-text span {
-            font-size: 0.7rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            color: white;
+            border: 2px solid var(--gold);
+            flex-shrink: 0;
         }
         
         .mobile-menu-btn {
@@ -180,6 +101,7 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
+            padding: 0.5rem;
         }
         
         .nav-links {
@@ -191,7 +113,8 @@
             background: var(--primary);
             flex-direction: column;
             padding: 1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            gap: 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
         
         .nav-links.active {
@@ -202,11 +125,9 @@
             color: white;
             text-decoration: none;
             font-weight: 600;
-            padding: 12px;
+            padding: 1rem;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            transition: background 0.3s;
         }
         
         .nav-links a:hover { 
@@ -214,329 +135,353 @@
             color: var(--gold); 
         }
         
-        .nav-links .highlight {
-            background: var(--gold);
-            color: var(--dark);
-            border-radius: 20px;
-            margin-top: 10px;
-            justify-content: center;
-        }
-
-        /* Hero */
+        /* Hero Section - Mobile First */
         .hero {
-            margin-top: 100px;
+            margin-top: 60px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            padding: 3rem 0;
+            padding: 2rem 0;
             position: relative;
+            overflow: hidden;
         }
         
         .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .hero-text h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
             text-align: center;
         }
         
-        .hero-badge {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--dark);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
+        .hero-text h1 span { color: var(--gold); }
         
-        .hero h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            line-height: 1.4;
-        }
-        
-        .hero h2 span { color: var(--gold); }
-        
-        .hero p {
+        .hero-text p {
             font-size: 1rem;
             margin-bottom: 1.5rem;
-            opacity: 0.95;
+            opacity: 0.9;
+            text-align: center;
         }
         
-        .hero-buttons {
+        .cta-buttons {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 0.75rem;
         }
         
         .btn {
-            padding: 14px 28px;
-            border-radius: 30px;
+            padding: 0.875rem 1.5rem;
+            border-radius: 50px;
             font-weight: 700;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 0.5rem;
             transition: all 0.3s;
             cursor: pointer;
             border: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
             width: 100%;
         }
         
-        .btn-gold {
+        .btn-primary {
             background: var(--gold);
             color: var(--dark);
-            box-shadow: 0 5px 20px rgba(255,215,0,0.3);
         }
         
-        .btn-sell {
-            background: var(--success);
+        .btn-secondary {
+            background: transparent;
             color: white;
-            box-shadow: 0 5px 20px rgba(16,185,129,0.3);
-        }
-
-        /* Features */
-        .features-bar {
-            background: white;
-            padding: 1.5rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 2px solid white;
         }
         
-        .features-grid {
+        .hero-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 0.75rem;
         }
         
-        .feature-item {
-            text-align: center;
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
             padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
-        .feature-item i {
-            font-size: 2rem;
-            color: var(--primary);
+        .stat-card i {
+            font-size: 1.5rem;
+            color: var(--gold);
             margin-bottom: 0.5rem;
         }
         
-        .feature-item h4 {
-            font-size: 0.9rem;
-            color: var(--dark);
+        .stat-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
         }
         
-        .feature-item p {
-            font-size: 0.75rem;
-            color: var(--gray);
-        }
-
-        /* Sections */
-        .section {
-            padding: 3rem 0;
+        .stat-card p {
+            font-size: 0.8rem;
+            opacity: 0.9;
         }
         
-        .section-header {
+        /* Categories Section - Mobile Optimized */
+        .categories-section {
+            padding: 2rem 0;
+            background: white;
+        }
+        
+        .section-title {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
-        .section-header h2 {
+        .section-title h2 {
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
         
-        .section-header p {
+        .section-title p {
             color: var(--gray);
             font-size: 0.9rem;
         }
-
-        /* Categories */
+        
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 0.75rem;
         }
         
         .category-card {
             background: white;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             border: 1px solid #E2E8F0;
         }
         
-        .category-img {
-            height: 100px;
+        .category-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
-            font-size: 2.5rem;
-        }
-        
-        .category-info {
             padding: 1rem;
+            text-align: center;
         }
         
-        .category-info h3 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
+        .category-header i {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
         }
         
-        .category-info p {
+        .category-header h3 {
+            font-size: 0.9rem;
+        }
+        
+        .category-items {
+            display: none;
+        }
+        
+        .view-all {
+            display: block;
+            text-align: center;
+            padding: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
             font-size: 0.8rem;
-            color: var(--gray);
-        }
-
-        /* Services */
-        .services-section {
-            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            border-top: 1px solid #E2E8F0;
         }
         
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
+        /* CEO Section - Mobile */
+        .ceo-section {
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+        }
+        
+        .ceo-container {
+            display: flex;
+            flex-direction: column;
             gap: 1.5rem;
         }
         
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        .ceo-photo-container {
+            position: relative;
+            max-width: 250px;
+            margin: 0 auto;
         }
         
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 50%;
+        .ceo-photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, #1E3A8A, #007A36);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
             color: white;
-            font-size: 1.8rem;
+            font-size: 1rem;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         
-        .service-card h3 {
+        .ceo-badge {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+        
+        .ceo-content h2 {
+            font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
         
-        .service-card p {
+        .message-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 0.5rem;
+            overflow-x: auto;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-weight: 600;
             color: var(--gray);
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-family: inherit;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .message-content {
+            background: white;
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            border-right: 3px solid var(--gold);
+        }
+        
+        /* Order Section - Mobile */
+        .order-section {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            padding: 2rem 0;
+        }
+        
+        .order-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .order-form {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group { 
+            margin-bottom: 1rem; 
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 600;
             font-size: 0.9rem;
         }
-
-        /* Provinces */
-        .provinces-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            -webkit-appearance: none;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
         }
         
-        .province-item {
-            background: linear-gradient(135deg, #F8FAFC, #E2E8F0);
-            padding: 1.5rem 1rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid transparent;
-        }
-        
-        .province-item i {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .province-item h4 {
-            font-size: 0.9rem;
-        }
-
-        /* Jobs */
-        .jobs-section {
+        .price-calculator {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            text-align: center;
+            padding: 1.5rem;
+            border-radius: 16px;
         }
         
-        .jobs-section h2 {
-            font-size: 1.5rem;
+        .price-calculator h3 {
+            font-size: 1.1rem;
             margin-bottom: 1rem;
-        }
-
-        /* Sell */
-        .sell-section {
-            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
-        }
-        
-        .sell-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            text-align: center;
-            border: 2px solid var(--success);
-        }
-        
-        .sell-icon {
-            width: 100px;
-            height: 100px;
-            background: var(--success);
-            border-radius: 50%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 3rem;
+            gap: 0.5rem;
         }
-
-        /* Contact Bar */
-        .contact-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            padding: 10px;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        
+        .calc-item {
             display: flex;
-            justify-content: space-around;
-            z-index: 998;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
         }
         
-        .contact-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--dark);
-            font-size: 0.75rem;
-            gap: 5px;
+        .calc-item.total {
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-bottom: none;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 2px solid var(--gold);
         }
         
-        .contact-btn i {
-            font-size: 1.5rem;
-        }
-        
-        .contact-btn.whatsapp i { color: #25D366; }
-        .contact-btn.telegram i { color: #0088cc; }
-        .contact-btn.phone i { color: var(--primary); }
-
-        /* Footer */
+        /* Footer - Mobile */
         footer {
             background: var(--dark);
             color: white;
-            padding: 3rem 0 6rem;
+            padding: 2rem 0 1rem;
         }
         
-        .footer-grid {
+        .footer-content {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
         
         .footer-section h4 {
@@ -545,127 +490,433 @@
             font-size: 1.1rem;
         }
         
-        .footer-section p, .footer-section li {
-            color: #94A3B8;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
         .footer-section ul {
             list-style: none;
         }
         
-        .footer-section li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+            color: #94A3B8;
+            font-size: 0.9rem;
         }
         
         .footer-bottom {
             text-align: center;
-            margin-top: 2rem;
-            padding-top: 2rem;
+            padding-top: 1rem;
             border-top: 1px solid #334155;
             color: #64748B;
+            font-size: 0.85rem;
         }
-
-        /* Desktop */
+        
+        /* Tablet and Desktop */
         @media (min-width: 768px) {
-            .mobile-menu-btn { display: none; }
-            .nav-links { 
-                display: flex !important; 
-                position: static; 
-                flex-direction: row; 
+            .container {
+                padding: 0 2rem;
+            }
+            
+            .mobile-menu-btn {
+                display: none;
+            }
+            
+            .nav-links {
+                display: flex !important;
+                position: static;
+                flex-direction: row;
                 background: transparent;
                 box-shadow: none;
+                padding: 0;
             }
-            .hero h2 { font-size: 2.5rem; }
-            .hero-buttons { flex-direction: row; }
-            .btn { width: auto; }
-            .features-grid { grid-template-columns: repeat(4, 1fr); }
-            .categories-grid { grid-template-columns: repeat(3, 1fr); }
-            .services-grid { grid-template-columns: repeat(3, 1fr); }
-            .provinces-grid { grid-template-columns: repeat(6, 1fr); }
-            .footer-grid { grid-template-columns: repeat(4, 1fr); }
+            
+            .nav-links a {
+                border-bottom: none;
+                padding: 0.5rem 1rem;
+            }
+            
+            .hero {
+                padding: 5rem 0;
+            }
+            
+            .hero-content {
+                flex-direction: row;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+                text-align: right;
+            }
+            
+            .hero-text p {
+                text-align: right;
+            }
+            
+            .cta-buttons {
+                flex-direction: row;
+            }
+            
+            .btn {
+                width: auto;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .category-items {
+                display: block;
+                padding: 0.5rem;
+            }
+            
+            .category-item {
+                padding: 0.5rem;
+                border-bottom: 1px solid #E2E8F0;
+                color: var(--gray);
+                font-size: 0.85rem;
+            }
+            
+            .ceo-container {
+                flex-direction: row;
+            }
+            
+            .ceo-photo-container {
+                max-width: 300px;
+            }
+            
+            .form-row {
+                flex-direction: row;
+            }
+            
+            .order-container {
+                flex-direction: row;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Language Selector -->
-    <div class="lang-selector">
-        <button class="lang-btn active" onclick="changeLang('fa')" title="دری">🇦🇫</button>
-        <button class="lang-btn" onclick="changeLang('ps')" title="پشتو">🇦🇫</button>
-        <button class="lang-btn" onclick="changeLang('zh')" title="中文">🇨🇳</button>
-        <button class="lang-btn" onclick="changeLang('en')" title="English">🇺🇸</button>
-    </div>
-
     <!-- Header -->
     <header>
-        <div class="top-bar">
-            <div class="top-bar-content">
-                <span>📞 +93 76 795 4658</span>
-                <div class="social-icons">
-                    <a href="https://wa.me/93767954658"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://t.me/moaizebuy"><i class="fab fa-telegram"></i></a>
-                    <a href="https://instagram.com/moaizebuy"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com/moaizebuy"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
         <div class="container">
             <nav>
                 <div class="logo">
                     <div class="logo-icon">M</div>
-                    <div class="logo-text">
-                        <h1>MOAIZ E-BUY</h1>
-                        <span>واردات | فروش | فرصت کار</span>
-                    </div>
+                    <span>MOAIZ E-BUY</span>
                 </div>
                 <button class="mobile-menu-btn" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
-                <div class="nav-links" id="navLinks">
-                    <a href="#home"><i class="fas fa-home"></i> <span data-fa="صفحه اصلی" data-ps="کورپاڼه" data-zh="首页" data-en="Home">صفحه اصلی</span></a>
-                    <a href="#categories"><i class="fas fa-th-large"></i> <span data-fa="دسته‌بندی" data-ps="ډلګۍ" data-zh="分类" data-en="Categories">دسته‌بندی</span></a>
-                    <a href="#services"><i class="fas fa-shipping-fast"></i> <span data-fa="خدمات" data-ps="خدمات" data-zh="服务" data-en="Services">خدمات</span></a>
-                    <a href="#provinces"><i class="fas fa-map-marker-alt"></i> <span data-fa="ولایات" data-ps="ولایتونه" data-zh="省份" data-en="Provinces">ولایات</span></a>
-                    <a href="#jobs"><i class="fas fa-briefcase"></i> <span data-fa="فرصت‌های کار" data-ps="د کار فرصتونه" data-zh="工作机会" data-en="Jobs">فرصت‌های کار</span></a>
-                    <a href="#sell" class="highlight"><i class="fas fa-store"></i> <span data-fa="فروش محصول شما" data-ps="خپل محصول وپلئ" data-zh="销售产品" data-en="Sell">فروش محصول شما</span></a>
-                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" onclick="toggleMenu()">صفحه اصلی</a></li>
+                    <li><a href="#categories" onclick="toggleMenu()">دسته‌بندی</a></li>
+                    <li><a href="#ceo" onclick="toggleMenu()">پیام مدیریت</a></li>
+                    <li><a href="#order" onclick="toggleMenu()">ثبت سفارش</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <span class="hero-badge">✓ قابل اعتماد</span>
-                <h2>واردات حرفه‌ای از <span>چین</span> به <span>افغانستان</span></h2>
-                <p>پلتفرم جامع واردات، فروش و فرصت‌های شغلی</p>
-                <div class="hero-buttons">
-                    <a href="#order" class="btn btn-gold"><i class="fas fa-shopping-cart"></i> شروع خرید</a>
-                    <a href="#sell" class="btn btn-sell"><i class="fas fa-store"></i> فروش محصول شما</a>
+                <div class="hero-text">
+                    <h1>واردات حرفه‌ای از <span>چین</span> به <span>افغانستان</span></h1>
+                    <p>پل اطمینان بین خریداران افغان و فروشندگان چینی</p>
+                    <div class="cta-buttons">
+                        <a href="#order" class="btn btn-primary">
+                            <i class="fas fa-shopping-cart"></i>
+                            شروع سفارش
+                        </a>
+                        <a href="#categories" class="btn btn-secondary">
+                            <i class="fas fa-th-large"></i>
+                            دسته‌بندی کالاها
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>+500</h3>
+                        <p>سفارش موفق</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>+200</h3>
+                        <p>مشتری راضی</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-box"></i>
+                        <h3>+50</h3>
+                        <p>تن کالا</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>15-25</h3>
+                        <p>روز تحویل</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features-bar">
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-item"><i class="fas fa-check-circle"></i><h4>+۵۰۰ سفارش موفق</h4><p>اعتماد مشتریان</p></div>
-                <div class="feature-item"><i class="fas fa-users"></i><h4>+۲۰۰ مشتری راضی</h4><p>کیفیت خدمات</p></div>
-                <div class="feature-item"><i class="fas fa-truck"></i><h4>ارسال به ۳۴ ولایت</h4><p>تحویل درب منزل</p></div>
-                <div class="feature-item"><i class="fas fa-headset"></i><h4>پشتیبانی ۲۴/۷</h4><p>همیشه در کنار شما</p></div>
+            <div class="section-title">
+                <h2>دسته‌بندی کالاها</h2>
+                <p>محصولات مورد نیاز خود را انتخاب کنید</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-header">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>الکترونیک</h3>
+                    </div>
+                    <div class="category-items">
+                        <div class="category-item">📱 موبایل</div>
+                        <div class="category-item">💻 لپ‌تاپ</div>
+                        <div class="category-item">🎧 لوازم جانبی</div>
+                    </div>
+                    <a href="#" class="view-all">مشاهده همه</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header" style="background: linear-gradient(135deg, #FF6A00, #FF8E53);">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>پوشاک</h3>
+                    </div>
+                    <div class="category-items">
+                        <div class="category-item">👔 مردانه</div>
+                        <div class="category-item">👗 زنانه</div>
+                        <div class="category-item">👟 کفش</div>
+                    </div>
+                    <a href="#" class="view-all">مشاهده همه</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header" style="background: linear-gradient(135deg, #007A36, #00C853);">
+                        <i class="fas fa-home"></i>
+                        <h3>لوازم خانگی</h3>
+                    </div>
+                    <div class="category-items">
+                        <div class="category-item">🍳 آشپزخانه</div>
+                        <div class="category-item">🧹 نظافت</div>
+                        <div class="category-item">🛋️ دکور</div>
+                    </div>
+                    <a href="#" class="view-all">مشاهده همه</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header" style="background: linear-gradient(135deg, #BF0000, #FF5252);">
+                        <i class="fas fa-industry"></i>
+                        <h3>صنعتی</h3>
+                    </div>
+                    <div class="category-items">
+                        <div class="category-item">⚙️ ماشین‌آلات</div>
+                        <div class="category-item">🔧 ابزار</div>
+                        <div class="category-item">🏗️ ساختمانی</div>
+                    </div>
+                    <a href="#" class="view-all">مشاهده همه</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header" style="background: linear-gradient(135deg, #9C27B0, #E040FB);">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>آرایشی</h3>
+                    </div>
+                    <div class="category-items">
+                        <div class="category-item">💄 آرایشی</div>
+                        <div class="category-item">🧴 بهداشتی</div>
+                        <div class="category-item">💊 پزشکی</div>
+                    </div>
+                    <a href="#" class="view-all">مشاهده همه</a>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header" style="background: linear-gradient(135deg, #1E3A8A, #42A5F5);">
+                        <i class="fas fa-motorcycle"></i>
+                        <h3>وسایل نقلیه</h3>
+                    </div>
+                    <div class="category-items">
+                        <div class="category-item">🏍️ موتور</div>
+                        <div class="category-item">🚲 دوچرخه</div>
+                        <div class="category-item">🔧 قطعات</div>
+                    </div>
+                    <a href="#" class="view-all">مشاهده همه</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories -->
-    <section class="section" id="categories">
+    <!-- CEO Section -->
+    <section class="ceo-section" id="ceo">
         <div class="container">
-            <div class="section-header"><h2>دسته‌بندی کالاها</h2><p>محصولات مورد نیاز خود را انتخاب کنید</p></div>
-            <div class="categories-grid">
-                <div class="category-card"><div class="category-img"><i cla
+            <div class="ceo-container">
+                <div class="ceo-photo-container">
+                    <div class="ceo-photo-placeholder">
+                        عکس شما
+                    </div>
+                    <div class="ceo-badge">
+                        <i class="fas fa-user-tie"></i>
+                        بنیان‌گذار
+                    </div>
+                </div>
+                <div class="ceo-content">
+                    <h2>پیام مدیریت</h2>
+                    <div class="message-tabs">
+                        <button class="tab-btn active" onclick="showMessage('dari')">🇦🇫 دری</button>
+                        <button class="tab-btn" onclick="showMessage('pashto')">🇦🇫 پشتو</button>
+                        <button class="tab-btn" onclick="showMessage('english')">🇬🇧 EN</button>
+                    </div>
+                    <div class="message-content" id="message-dari">
+                        ما در MOAIZ E-BUY مصمم به ایجاد پل ارتباطی قوی بین فابریکه‌های معتبر چین و متشبثین افغانستانی هستیم.
+                    </div>
+                    <div class="message-content" id="message-pashto" style="display:none;">
+                        موږ په MOAIZ E-BUY کې د چین فابریکو او افغانستان سوداګرو ترمنځ د پیاوړي اړیکو پل جوړ کړو.
+                    </div>
+                    <div class="message-content" id="message-english" style="display:none;">
+                        At MOAIZ E-BUY, we build a strong bridge between Chinese factories and Afghan entrepreneurs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order-section" id="order">
+        <div class="container">
+            <div class="section-title">
+                <h2>ثبت سفارش</h2>
+                <p>فرم زیر را پر کنید</p>
+            </div>
+            <div class="order-container">
+                <form class="order-form" onsubmit="event.preventDefault(); alert('سفارش ثبت شد!');">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>نام *</label>
+                            <input type="text" required placeholder="نام خود را وارد کنید">
+                        </div>
+                        <div class="form-group">
+                            <label>شماره تماس *</label>
+                            <input type="tel" required placeholder="۰۷۶ ۷۹۵ ۴۶۵۸">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>لینک Alibaba *</label>
+                        <input type="url" required placeholder="https://...">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>دسته‌بندی *</label>
+                            <select required>
+                                <option value="">انتخاب</option>
+                                <option value="electronics">الکترونیک</option>
+                                <option value="clothing">پوشاک</option>
+                                <option value="home">لوازم خانگی</option>
+                                <option value="industrial">صنعتی</option>
+                                <option value="beauty">آرایشی</option>
+                                <option value="vehicle">وسایل نقلیه</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>تعداد *</label>
+                            <input type="number" required min="1" value="1">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>ولایت *</label>
+                        <select required>
+                            <option value="">انتخاب</option>
+                            <option value="kabul">کابل</option>
+                            <option value="nangarhar">ننگرهار</option>
+                            <option value="kandahar">کندهار</option>
+                            <option value="herat">هرات</option>
+                            <option value="balkh">بلخ</option>
+                            <option value="other">سایر</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        ارسال سفارش
+                    </button>
+                </form>
+                
+                <div class="price-calculator">
+                    <h3><i class="fas fa-calculator"></i> محاسبه قیمت</h3>
+                    <div class="calc-item">
+                        <span>قیمت محصول:</span>
+                        <span>$0</span>
+                    </div>
+                    <div class="calc-item">
+                        <span>حمل و نقل:</span>
+                        <span>$10-50</span>
+                    </div>
+                    <div class="calc-item">
+                        <span>کارمزد (10%):</span>
+                        <span>$0</span>
+                    </div>
+                    <div class="calc-item total">
+                        <span>مجموع:</span>
+                        <span>تماس بگیرید</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>MOAIZ E-BUY</h4>
+                    <p style="color:#94A3B8; font-size:0.9rem;">پل اطمینان بین خریداران افغان و فروشندگان چینی</p>
+                </div>
+                <div class="footer-section">
+                    <h4>تماس</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +93 76 795 4658</li>
+                        <li><i class="fas fa-envelope"></i> omari.suliman@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> مرکز تجارتی داودزی، کابل</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© ۲۰۲۴ MOAIZ E-BUY - طراحی شده برای افغانستان 🇦🇫</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        function showMessage(lang) {
+            document.getElementById('message-dari').style.display = 'none';
+            document.getElementById('message-pashto').style.display = 'none';
+            document.getElementById('message-english').style.display = 'none';
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('message-' + lang).style.display = 'block';
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
