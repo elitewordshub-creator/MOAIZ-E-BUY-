@@ -1,0 +1,22 @@
+{
+  "name": "MOAIZ E-BUY",
+  "short_name": "MOAIZ",
+  "description": "پلتفرم واردات و فروش چین-افغانستان",
+  "start_url": "/MOAIZ-E-BUY-/",
+  "display": "standalone",
+  "background_color": "#1E3A8A",
+  "theme_color": "#007A36",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
