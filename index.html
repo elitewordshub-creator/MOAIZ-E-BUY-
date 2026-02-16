@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>MOAIZ E-BUY | پلتفرم واردات و فروش چین-افغانستان</title>
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007A36">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary: #1E3A8A;
@@ -43,30 +52,40 @@
         /* Language Selector */
         .lang-selector {
             position: fixed;
-            top: 70px;
-            left: 10px;
+            top: 75px;
+            right: 10px;
             z-index: 999;
             background: white;
-            border-radius: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 5px;
+            display: flex;
+            gap: 5px;
         }
         
         .lang-btn {
-            padding: 8px 15px;
-            border: none;
-            background: transparent;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid transparent;
             cursor: pointer;
-            font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s;
+            background: white;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
         }
         
         .lang-btn.active {
-            background: var(--primary);
-            color: white;
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(255,215,0,0.5);
         }
-        
+
         /* Header */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -89,6 +108,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
         
         .social-icons {
@@ -199,35 +221,18 @@
             margin-top: 10px;
             justify-content: center;
         }
-        
-        .nav-links .highlight:hover {
-            background: var(--orange);
-        }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             margin-top: 100px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 3rem 0;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="1"/></svg>');
-            background-size: 100px;
         }
         
         .hero-content {
-            position: relative;
-            z-index: 1;
+            text-align: center;
         }
         
         .hero-badge {
@@ -247,9 +252,7 @@
             line-height: 1.4;
         }
         
-        .hero h2 span {
-            color: var(--gold);
-        }
+        .hero h2 span { color: var(--gold); }
         
         .hero p {
             font-size: 1rem;
@@ -285,29 +288,13 @@
             box-shadow: 0 5px 20px rgba(255,215,0,0.3);
         }
         
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255,215,0,0.4);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary);
-        }
-        
         .btn-sell {
             background: var(--success);
             color: white;
             box-shadow: 0 5px 20px rgba(16,185,129,0.3);
         }
-        
-        /* Features Bar */
+
+        /* Features */
         .features-bar {
             background: white;
             padding: 1.5rem 0;
@@ -341,7 +328,7 @@
             color: var(--gray);
         }
 
-        /* Categories Section */
+        /* Sections */
         .section {
             padding: 3rem 0;
         }
@@ -361,7 +348,8 @@
             color: var(--gray);
             font-size: 0.9rem;
         }
-        
+
+        /* Categories */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -374,12 +362,6 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
             border: 1px solid #E2E8F0;
-            transition: all 0.3s;
-        }
-        
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
         
         .category-img {
@@ -406,7 +388,7 @@
             color: var(--gray);
         }
 
-        /* Services Section */
+        /* Services */
         .services-section {
             background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
         }
@@ -448,11 +430,7 @@
             font-size: 0.9rem;
         }
 
-        /* Provinces Section */
-        .provinces-section {
-            background: white;
-        }
-        
+        /* Provinces */
         .provinces-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -465,12 +443,6 @@
             border-radius: 15px;
             text-align: center;
             border: 2px solid transparent;
-            transition: all 0.3s;
-        }
-        
-        .province-item:hover {
-            border-color: var(--gold);
-            transform: scale(1.05);
         }
         
         .province-item i {
@@ -483,7 +455,7 @@
             font-size: 0.9rem;
         }
 
-        /* Jobs Section */
+        /* Jobs */
         .jobs-section {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -494,13 +466,8 @@
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-        
-        .jobs-section p {
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
 
-        /* Sell Section */
+        /* Sell */
         .sell-section {
             background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
         }
@@ -525,17 +492,6 @@
             margin: 0 auto 1.5rem;
             color: white;
             font-size: 3rem;
-        }
-        
-        .sell-card h3 {
-            color: var(--dark);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .sell-card p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
         }
 
         /* Contact Bar */
@@ -637,23 +593,22 @@
 <body>
     <!-- Language Selector -->
     <div class="lang-selector">
-        <button class="lang-btn active" onclick="changeLang('fa')">🇦🇫 دری</button>
-        <button class="lang-btn" onclick="changeLang('ps')">🇦🇫 پشتو</button>
-        <button class="lang-btn" onclick="changeLang('en')">🇬🇧 EN</button>
+        <button class="lang-btn active" onclick="changeLang('fa')" title="دری">🇦🇫</button>
+        <button class="lang-btn" onclick="changeLang('ps')" title="پشتو">🇦🇫</button>
+        <button class="lang-btn" onclick="changeLang('zh')" title="中文">🇨🇳</button>
+        <button class="lang-btn" onclick="changeLang('en')" title="English">🇺🇸</button>
     </div>
 
     <!-- Header -->
     <header>
         <div class="top-bar">
-            <div class="container">
-                <div class="top-bar-content">
-                    <span>📞 +93 76 795 4658</span>
-                    <div class="social-icons">
-                        <a href="https://wa.me/93767954658" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/moaizebuy" target="_blank"><i class="fab fa-telegram"></i></a>
-                        <a href="https://instagram.com/moaizebuy" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/moaizebuy" target="_blank"><i class="fab fa-facebook"></i></a>
-                    </div>
+            <div class="top-bar-content">
+                <span>📞 +93 76 795 4658</span>
+                <div class="social-icons">
+                    <a href="https://wa.me/93767954658"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://t.me/moaizebuy"><i class="fab fa-telegram"></i></a>
+                    <a href="https://instagram.com/moaizebuy"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/moaizebuy"><i class="fab fa-facebook"></i></a>
                 </div>
             </div>
         </div>
@@ -670,354 +625,47 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="nav-links" id="navLinks">
-                    <a href="#home"><i class="fas fa-home"></i> صفحه اصلی</a>
-                    <a href="#categories"><i class="fas fa-th-large"></i> دسته‌بندی کالاها</a>
-                    <a href="#services"><i class="fas fa-shipping-fast"></i> خدمات</a>
-                    <a href="#provinces"><i class="fas fa-map-marker-alt"></i> ولایات</a>
-                    <a href="#jobs"><i class="fas fa-briefcase"></i> فرصت‌های کار</a>
-                    <a href="#sell" class="highlight"><i class="fas fa-store"></i> فروش محصول شما</a>
+                    <a href="#home"><i class="fas fa-home"></i> <span data-fa="صفحه اصلی" data-ps="کورپاڼه" data-zh="首页" data-en="Home">صفحه اصلی</span></a>
+                    <a href="#categories"><i class="fas fa-th-large"></i> <span data-fa="دسته‌بندی" data-ps="ډلګۍ" data-zh="分类" data-en="Categories">دسته‌بندی</span></a>
+                    <a href="#services"><i class="fas fa-shipping-fast"></i> <span data-fa="خدمات" data-ps="خدمات" data-zh="服务" data-en="Services">خدمات</span></a>
+                    <a href="#provinces"><i class="fas fa-map-marker-alt"></i> <span data-fa="ولایات" data-ps="ولایتونه" data-zh="省份" data-en="Provinces">ولایات</span></a>
+                    <a href="#jobs"><i class="fas fa-briefcase"></i> <span data-fa="فرصت‌های کار" data-ps="د کار فرصتونه" data-zh="工作机会" data-en="Jobs">فرصت‌های کار</span></a>
+                    <a href="#sell" class="highlight"><i class="fas fa-store"></i> <span data-fa="فروش محصول شما" data-ps="خپل محصول وپلئ" data-zh="销售产品" data-en="Sell">فروش محصول شما</span></a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
                 <span class="hero-badge">✓ قابل اعتماد</span>
                 <h2>واردات حرفه‌ای از <span>چین</span> به <span>افغانستان</span></h2>
-                <p>پلتفرم جامع واردات، فروش و فرصت‌های شغلی. پل اطمینان بین خریداران افغان و فروشندگان چینی.</p>
+                <p>پلتفرم جامع واردات، فروش و فرصت‌های شغلی</p>
                 <div class="hero-buttons">
-                    <a href="#order" class="btn btn-gold">
-                        <i class="fas fa-shopping-cart"></i>
-                        شروع خرید
-                    </a>
-                    <a href="#sell" class="btn btn-sell">
-                        <i class="fas fa-store"></i>
-                        فروش محصول شما
-                    </a>
+                    <a href="#order" class="btn btn-gold"><i class="fas fa-shopping-cart"></i> شروع خرید</a>
+                    <a href="#sell" class="btn btn-sell"><i class="fas fa-store"></i> فروش محصول شما</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Bar -->
+    <!-- Features -->
     <section class="features-bar">
         <div class="container">
             <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-check-circle"></i>
-                    <h4>+۵۰۰ سفارش موفق</h4>
-                    <p>اعتماد مشتریان</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-users"></i>
-                    <h4>+۲۰۰ مشتری راضی</h4>
-                    <p>کیفیت خدمات</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-truck"></i>
-                    <h4>ارسال به ۳۴ ولایت</h4>
-                    <p>تحویل درب منزل</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-headset"></i>
-                    <h4>پشتیبانی ۲۴/۷</h4>
-                    <p>همیشه در کنار شما</p>
-                </div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i><h4>+۵۰۰ سفارش موفق</h4><p>اعتماد مشتریان</p></div>
+                <div class="feature-item"><i class="fas fa-users"></i><h4>+۲۰۰ مشتری راضی</h4><p>کیفیت خدمات</p></div>
+                <div class="feature-item"><i class="fas fa-truck"></i><h4>ارسال به ۳۴ ولایت</h4><p>تحویل درب منزل</p></div>
+                <div class="feature-item"><i class="fas fa-headset"></i><h4>پشتیبانی ۲۴/۷</h4><p>همیشه در کنار شما</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Categories Section -->
+    <!-- Categories -->
     <section class="section" id="categories">
         <div class="container">
-            <div class="section-header">
-                <h2>دسته‌بندی کالاها</h2>
-                <p>محصولات مورد نیاز خود را انتخاب کنید</p>
-            </div>
+            <div class="section-header"><h2>دسته‌بندی کالاها</h2><p>محصولات مورد نیاز خود را انتخاب کنید</p></div>
             <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-img"><i class="fas fa-mobile-alt"></i></div>
-                    <div class="category-info">
-                        <h3>الکترونیک</h3>
-                        <p>موبایل، لپ‌تاپ، لوازم جانبی</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-img" style="background: linear-gradient(135deg, #FF6A00, #FF8E53);"><i class="fas fa-tshirt"></i></div>
-                    <div class="category-info">
-                        <h3>پوشاک</h3>
-                        <p>مردانه، زنانه، بچگانه</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-img" style="background: linear-gradient(135deg, #007A36, #00C853);"><i class="fas fa-home"></i></div>
-                    <div class="category-info">
-                        <h3>لوازم خانگی</h3>
-                        <p>آشپزخانه، نظافت، دکور</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-img" style="background: linear-gradient(135deg, #BF0000, #FF5252);"><i class="fas fa-industry"></i></div>
-                    <div class="category-info">
-                        <h3>صنعتی</h3>
-                        <p>ماشین‌آلات، ابزار، تجهیزات</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-img" style="background: linear-gradient(135deg, #9C27B0, #E040FB);"><i class="fas fa-heartbeat"></i></div>
-                    <div class="category-info">
-                        <h3>آرایشی و بهداشتی</h3>
-                        <p>لوازم آرایش، پزشکی</p>
-                    </div>
-                </div>
-                <div class="category-card">
-                    <div class="category-img" style="background: linear-gradient(135deg, #1E3A8A, #42A5F5);"><i class="fas fa-motorcycle"></i></div>
-                    <div class="category-info">
-                        <h3>وسایل نقلیه</h3>
-                        <p>موتور، دوچرخه، قطعات</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section services-section" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2>خدمات ما در افغانستان</h2>
-                <p>پوشش سراسری در تمام ولایات</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-search"></i></div>
-                    <h3>یافتن تامین‌کننده</h3>
-                    <p>جستجوی حرفه‌ای فروشندگان معتبر در چین</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>مذاکره قیمت</h3>
-                    <p>مذاکره به زبان چینی برای بهترین قیمت</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>بازرسی کیفیت</h3>
-                    <p>کنترل کیفیت کالا قبل از ارسال</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-shipping-fast"></i></div>
-                    <h3>حمل‌ونقل امن</h3>
-                    <p>ارسال با بهترین روش‌های حمل‌ونقل</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
-                    <h3>ترخیص گمرکی</h3>
-                    <p>انجام تمام امور گمرکی و اداری</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-headset"></i></div>
-                    <h3>پشتیبانی ۲۴/۷</h3>
-                    <p>پاسخگویی در تمام مراحل سفارش</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Provinces Section -->
-    <section class="section provinces-section" id="provinces">
-        <div class="container">
-            <div class="section-header">
-                <h2>ولایات تحت پوشش</h2>
-                <p>ارسال به تمام نقاط افغانستان</p>
-            </div>
-            <div class="provinces-grid">
-                <div class="province-item">
-                    <i class="fas fa-city"></i>
-                    <h4>کابل</h4>
-                </div>
-                <div class="province-item">
-                    <i class="fas fa-mosque"></i>
-                    <h4>ننگرهار</h4>
-                </div>
-                <div class="province-item">
-                    <i class="fas fa-landmark"></i>
-                    <h4>کندهار</h4>
-                </div>
-                <div class="province-item">
-                    <i class="fas fa-monument"></i>
-                    <h4>هرات</h4>
-                </div>
-                <div class="province-item">
-                    <i class="fas fa-dome"></i>
-                    <h4>بلخ</h4>
-                </div>
-                <div class="province-item">
-                    <i class="fas fa-flag"></i>
-                    <h4>سایر ولایات</h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Jobs Section -->
-    <section class="section jobs-section" id="jobs">
-        <div class="container">
-            <h2>فرصت‌های کار با MOAIZ E-BUY</h2>
-            <p>به تیم ما بپیوندید و در رشد تجارت افغانستان سهیم شوید</p>
-            <div style="margin-top: 2rem;">
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem;">
-                    <h4>🚚 نماینده فروش ولایتی</h4>
-                    <p>دریافت و تحویل سفارشات در ولایت خود</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem;">
-                    <h4>📱 کارشناس فروش</h4>
-                    <p>مشاوره و راهنمایی مشتریان</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 15px;">
-                    <h4>🌐 مترجم چینی</h4>
-                    <p>ارتباط با فروشندگان چینی</p>
-                </div>
-            </div>
-            <a href="https://wa.me/93767954658?text=درخواست%20کار" class="btn btn-gold" style="margin-top: 2rem;">
-                <i class="fas fa-paper-plane"></i>
-                ارسال درخواست کار
-            </a>
-        </div>
-    </section>
-
-    <!-- Sell Section -->
-    <section class="section sell-section" id="sell">
-        <div class="container">
-            <div class="section-header">
-                <h2>فروش محصول خود را به ما بسپارید</h2>
-                <p>محصولات خود را از طریق پلتفرم ما بفروشید</p>
-            </div>
-            <div class="sell-card">
-                <div class="sell-icon"><i class="fas fa-store"></i></div>
-                <h3>فروشنده شوید</h3>
-                <p>آیا محصولاتی برای فروش دارید؟ با MOAIZ E-BUY به بازار بزرگ افغانستان دسترسی پیدا کنید. ما بازاریابی، فروش و تحویل را برای شما انجام می‌دهیم.</p>
-                <div style="text-align: right; margin: 1.5rem 0;">
-                    <div style="margin-bottom: 0.5rem;"><i class="fas fa-check text-success"></i> بازاریابی رایگان</div>
-                    <div style="margin-bottom: 0.5rem;"><i class="fas fa-check text-success"></i> دسترسی به هزاران مشتری</div>
-                    <div style="margin-bottom: 0.5rem;"><i class="fas fa-check text-success"></i> تحویل و پرداخت امن</div>
-                    <div><i class="fas fa-check text-success"></i> کارمزد کم (فقط ۵٪)</div>
-                </div>
-                <a href="https://wa.me/93767954658?text=درخواست%20فروشنده%20شدن" class="btn btn-sell">
-                    <i class="fab fa-whatsapp"></i>
-                    درخواست فروشندگی
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>MOAIZ E-BUY</h4>
-                    <p>پلتفرم جامع واردات، فروش و فرصت‌های شغلی بین چین و افغانستان</p>
-                    <div class="social-icons" style="margin-top: 1rem;">
-                        <a href="https://wa.me/93767954658"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/moaizebuy"><i class="fab fa-telegram"></i></a>
-                        <a href="https://instagram.com/moaizebuy"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/moaizebuy"><i class="fab fa-facebook"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>لینک‌های سریع</h4>
-                    <ul>
-                        <li><i class="fas fa-home"></i> صفحه اصلی</li>
-                        <li><i class="fas fa-th-large"></i> دسته‌بندی کالاها</li>
-                        <li><i class="fas fa-briefcase"></i> فرصت‌های کار</li>
-                        <li><i class="fas fa-store"></i> فروش محصول شما</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>خدمات</h4>
-                    <ul>
-                        <li><i class="fas fa-search"></i> یافتن تامین‌کننده</li>
-                        <li><i class="fas fa-shipping-fast"></i> حمل‌ونقل</li>
-                        <li><i class="fas fa-file-alt"></i> ترخیص گمرکی</li>
-                        <li><i class="fas fa-headset"></i> پشتیبانی</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>تماس با ما</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> مرکز تجارتی داودزی، منزل دوم، کابل</li>
-                        <li><i class="fas fa-phone"></i> +93 76 795 4658</li>
-                        <li><i class="fas fa-envelope"></i> omari.suliman@gmail.com</li>
-                        <li><i class="fas fa-clock"></i> شنبه - پنج‌شنبه: ۸ صبح - ۶ عصر</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© ۲۰۲۴ MOAIZ E-BUY - طراحی شده با ❤️ برای افغانستان 🇦🇫</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Contact Bar -->
-    <div class="contact-bar">
-        <a href="https://wa.me/93767954658" class="contact-btn whatsapp">
-            <i class="fab fa-whatsapp"></i>
-            واتساپ
-        </a>
-        <a href="https://t.me/moaizebuy" class="contact-btn telegram">
-            <i class="fab fa-telegram"></i>
-            تلگرام
-        </a>
-        <a href="tel:+93767954658" class="contact-btn phone">
-            <i class="fas fa-phone"></i>
-            تماس
-        </a>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-        
-        function changeLang(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            const messages = {
-                'fa': 'زبان به دری تغییر کرد',
-                'ps': 'ژبه پښتو ته واوښته',
-                'en': 'Language changed to English'
-            };
-            alert(messages[lang]);
-        }
-    </script>
-</body>
-</html>
-const CACHE_NAME = 'moaiz-ebuy-v1';
-const urlsToCache = [
-  '/MOAIZ-E-BUY-/',
-  '/MOAIZ-E-BUY-/index.html',
-  '/MOAIZ-E-BUY-/manifest.json'
-];
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
-});
-
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-  );
-});
+                <div class="category-card"><div class="category-img"><i cla
